@@ -41,6 +41,7 @@ jobs:
       - run:
           name: Test
           command: |
+            . venv/bin/activate
             python e2e.py
 
       - store_artifacts:

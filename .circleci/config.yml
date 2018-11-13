@@ -42,7 +42,10 @@ jobs:
           name: Test
           command: |
             . venv/bin/activate
-            python e2e.py
+            curl https://chromedriver.storage.googleapis.com/2.43/chromedriver_linux64.zip -o chromedriver_linux64.zip
+            md5sum -c chromedriver_md5sum.txt
+            unzip chromedriver_linux64.zip
+            PATH=$PATH:$PWD python e2e.py
 
       - store_artifacts:
           path: test-reports

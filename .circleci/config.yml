@@ -33,7 +33,6 @@ jobs:
             . venv/bin/activate
             python manage.py migrate && python manage.py runserver &
             cd client && npm run dev &
-            cd ../
             curl https://chromedriver.storage.googleapis.com/2.43/chromedriver_linux64.zip -o chromedriver_linux64.zip
             md5sum -c chromedriver_md5sum.txt
             unzip chromedriver_linux64.zip

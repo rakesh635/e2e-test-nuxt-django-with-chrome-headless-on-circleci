@@ -38,6 +38,11 @@ jobs:
           command: |
             cd client && npm run dev &
 
+      - run:
+          name: Test
+          command: |
+            python e2e.py
+
       - store_artifacts:
           path: test-reports
           destination: test-reports

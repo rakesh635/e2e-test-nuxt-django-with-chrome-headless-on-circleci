@@ -32,16 +32,8 @@ jobs:
           command: |
             . venv/bin/activate
             python manage.py migrate && python manage.py runserver &
-
-      - run:
-          name: Start nuxt dev
-          command: |
             cd client && npm run dev &
-
-      - run:
-          name: Test
-          command: |
-            . venv/bin/activate
+            cd ../
             curl https://chromedriver.storage.googleapis.com/2.43/chromedriver_linux64.zip -o chromedriver_linux64.zip
             md5sum -c chromedriver_md5sum.txt
             unzip chromedriver_linux64.zip

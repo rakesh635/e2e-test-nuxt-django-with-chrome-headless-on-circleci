@@ -1,5 +1,6 @@
 from selenium import webdriver
 
-
-driver = webdriver.Chrome()
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+driver = webdriver.Chrome(chrome_options=options)
 driver.get_page('http://127.0.0.1:8000')
